@@ -17,7 +17,7 @@ If you had some issues using sqlite3 lib to connect to your database on windows 
 ## Mutations and queries
 
 ```graphql
-mutation createCategory {
+mutation MutationCreateCategory {
   createCategory(input: {
     name: "Technology", 
     description: "technology courses"
@@ -28,7 +28,7 @@ mutation createCategory {
   }
 }
 
-mutation createCourse {
+mutation MutationCreateCourse {
   createCourse(input: {
     name: "Go lang", 
     description: "Go lang course",
@@ -66,6 +66,18 @@ query QueryCourses {
     courses {
     id
     name
+	}
+}
+
+query QueryCoursesWithCategories {
+    courses {
+    id
+    name
+    category{
+    	id
+      name
+      description
+    }
 	}
 }
 
