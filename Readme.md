@@ -32,7 +32,7 @@ mutation createCourse {
   createCourse(input: {
     name: "Go lang", 
     description: "Go lang course",
-    categoryId: "fb25f257-71da-4340-a21b-764e020b4021"
+    categoryId: "4987d819-9914-4396-a30c-3c7b3966456e"
   }) {
     id
     name
@@ -49,10 +49,24 @@ query QueryCategories {
 	}
 }
 
+query QueryCategoriesWithCourses {
+    categories {
+      id
+      name
+      description,
+      courses {
+        id
+        name
+        description
+      }
+	}
+}
+
 query QueryCourses {
     courses {
     id
     name
 	}
 }
+
 ```
